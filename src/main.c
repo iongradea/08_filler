@@ -33,6 +33,9 @@ int   main(void)
     else if (ft_strncmp(line, "Piece", 5) == 0)
     {
       save_piece(&line, &data);
+      if (solve_dir_bot(&data) == TRUE)
+        ft_printf("%i %i\n", data.out_y, data.out_x);
+      // TESTING
       boolean = TRUE;
     }
     // TESTING
@@ -42,7 +45,6 @@ int   main(void)
       prt_data(data);
     }
     // END TESTING
-    ft_printf("12 14\n");
   }
   write(2, "end\n", 4);
   return (0);
