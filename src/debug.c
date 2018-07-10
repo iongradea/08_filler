@@ -19,6 +19,14 @@ void prt_data(t_data data) {
   fprintf(stderr, "lenmy : %i\n", data.lenmy);
   fprintf(stderr, "lenpx : %i\n", data.lenpx);
   fprintf(stderr, "lenpy : %i\n", data.lenpy);
+  fprintf(stderr, "p_topx : %i\n", data.p_topx);
+  fprintf(stderr, "p_topy : %i\n", data.p_topy);
+  fprintf(stderr, "p_botx : %i\n", data.p_botx);
+  fprintf(stderr, "p_boty : %i\n", data.p_boty);
+  fprintf(stderr, "first_p_x : %i\n", data.first_p_x);
+  fprintf(stderr, "first_p_y : %i\n", data.first_p_y);
+  fprintf(stderr, "last_p_x : %i\n", data.last_p_x);
+  fprintf(stderr, "last_p_y : %i\n", data.last_p_y);
 }
 
 void prt_data_map(t_data data) {

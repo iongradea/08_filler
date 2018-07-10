@@ -35,6 +35,14 @@ typedef struct  s_data
   int   lenmy;
   int   lenpx;
   int   lenpy;
+  int   p_topx;
+  int   p_topy;
+  int   p_botx;
+  int   p_boty;
+  int   first_p_x;
+  int   first_p_y;
+  int   last_p_x;
+  int   last_p_y;
 }               t_data;
 
 // PARSING
@@ -42,8 +50,10 @@ void init_data(t_data *data);
 void save_player(char **line, t_data *data);
 void save_map(char **line, t_data *data);
 void save_piece(char **line, t_data *data);
-
-
+void get_top_piece(t_data *data);
+void get_bot_piece(t_data *data);
+void get_first_piece(t_data *data);
+void get_last_piece(t_data *data);
 
 // TEST & ANNEX
 void prt_vm(void);

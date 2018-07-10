@@ -17,23 +17,30 @@ int   main(void)
   char    *line;
   t_data  data;
   // TESTING
-  static int  count = 0;
-  // END TESTING 
+  static int  boolean = FALSE;
+  // END TESTING
 
   init_data(&data);
   while (get_next_line(0, &line) > 0)
   {
-    // fprintf(stderr, "gnl\n");
     if (ft_strncmp(line, "$$$", 3) == 0)
       save_player(&line, &data);
     else if (ft_strncmp(line, "Plateau", 7) == 0)
+    {
       save_map(&line, &data);
+      boolean = FALSE;
+    }
     else if (ft_strncmp(line, "Piece", 5) == 0)
+    {
       save_piece(&line, &data);
+      boolean = TRUE;
+    }
     // TESTING
-    if (count == 2)
+    if (boolean == TRUE)
+    {
+      fprintf(stderr, "DATA\n");
       prt_data(data);
-    count++;
+    }
     // END TESTING
     ft_printf("12 14\n");
   }

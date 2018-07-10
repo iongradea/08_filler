@@ -14,9 +14,11 @@
 
 void save_player(char **line, t_data *data)
 {
-  fprintf(stderr, "save_player\n");
   data->player = (*line)[10] == '1' ? PLAYER1 : PLAYER2;
   data->opponent = data->player == PLAYER1 ? PLAYER2 : PLAYER1;
+  // TESTING
+  fprintf(stderr, "SAVE_PLAYER\n");
+  // END TESTING
 }
 
 void save_map(char **line, t_data *data)
@@ -41,8 +43,12 @@ void save_map(char **line, t_data *data)
     i++;
   }
   *line = NULL;
+  get_first_piece(data);
+  get_last_piece(data);
+  // TESTING
   fprintf(stderr, "MAP\n");
   prt_data_map(*data);
+  // END TESTING
 }
 
 void save_piece(char **line, t_data *data)
@@ -65,6 +71,10 @@ void save_piece(char **line, t_data *data)
     i++;
   }
   *line = NULL;
+  get_top_piece(data);
+  get_bot_piece(data);
+  // TESTING
   fprintf(stderr, "PIECE\n");
   prt_data_piece(*data);
+  // END TESTING
 }
