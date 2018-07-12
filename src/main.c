@@ -15,6 +15,7 @@
 static int  set_boolean(t_data *data, int set_start_pos)
 {
   data->start_bot_pos = data->first_p_x > data->lenmx / 2 ? TRUE : FALSE;
+  fprintf(stderr, "first_p_x : %i - lenmnx : %i\n", data->first_p_x,  data->lenmx);
   return (set_start_pos = TRUE);
 }
 
@@ -22,7 +23,7 @@ int   main(void)
 {
   char    *line;
   t_data  data;
-  int  set_start_pos = FALSE;
+  static int  set_start_pos = FALSE;
 
   init_data(&data);
   while (get_next_line(0, &line) > 0)

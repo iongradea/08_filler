@@ -15,29 +15,61 @@
 int   solve_dir_bot(t_data *data)
 {
   if (test_player_in_center(data) == FALSE && go_to_center(data) == TRUE)
+  {
+    fprintf(stderr, "center\n");
     return (TRUE);
+  }
   if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
+  {
+    fprintf(stderr, "north\n");
     return (TRUE);
+  }
   if (test_player_in_west(data) == FALSE && go_to_west(data) == TRUE)
+  {
+    fprintf(stderr, "west\n");
     return (TRUE);
+  }
   if (test_player_in_east(data) == FALSE && go_to_east(data) == TRUE)
+  {
+    fprintf(stderr, "east\n");
     return (TRUE);
+  }
   if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
+  {
+    fprintf(stderr, "south\n");
     return (TRUE);
+  }
+  fprintf(stderr, "fill\n");
   return (fill_random(data));
 }
 
 int   solve_dir_top(t_data *data)
 {
   if (test_player_in_center(data) == FALSE && go_to_center(data) == TRUE)
+  {
+    fprintf(stderr, "center\n");
     return (TRUE);
+  }
   if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
+  {
+    fprintf(stderr, "south\n");
     return (TRUE);
+  }
   if (test_player_in_east(data) == FALSE && go_to_east(data) == TRUE)
+  {
+    fprintf(stderr, "east\n");
     return (TRUE);
+  }
   if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
+  {
+    fprintf(stderr, "north\n");
     return (TRUE);
+  }
   if (test_player_in_west(data) == FALSE && go_to_west(data) == TRUE)
+  {
+    fprintf(stderr, "west\n");
     return (TRUE);
+  }
+  fprintf(stderr, "fill\n");
   return (fill_random(data));
 }

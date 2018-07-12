@@ -17,9 +17,11 @@ int   go_to_center(t_data *data)
   if (data->start_bot_pos == TRUE &&
     test_coord(FIRST_BOTRIGHTX, FIRST_BOTRIGHTY, data) == TRUE)
     return (save_coord(FIRST_BOTRIGHTX, FIRST_BOTRIGHTY, data));
+  // fprintf(stderr, "go_center after bot\n");
   if (data->start_bot_pos == FALSE &&
     test_coord(LAST_TOPLEFTX, LAST_TOPLEFTY, data) == TRUE)
     return (save_coord(LAST_TOPLEFTX, LAST_TOPLEFTY, data));
+  // fprintf(stderr, "go_center after top\n");
   return (FALSE);
 }
 

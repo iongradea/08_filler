@@ -16,6 +16,7 @@ void save_player(char **line, t_data *data)
 {
   data->player = (*line)[10] == '1' ? PLAYER1 : PLAYER2;
   data->opponent = data->player == PLAYER1 ? PLAYER2 : PLAYER1;
+  fprintf(stderr, "player : %c\n", data->player);
 }
 
 void save_map(char **line, t_data *data)

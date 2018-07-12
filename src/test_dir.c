@@ -15,8 +15,9 @@
 int   test_player_in_center(t_data *data)
 {
   if ((data->map)[data->lenmy / 2][data->lenmx / 2] == '.')
-    return (TRUE);
-  return (FALSE);
+    return (FALSE);
+  // fprintf(stderr, "lenmy / 2 : %i - lenmx / 2 : %i\n", data->lenmy / 2, data->lenmx / 2);
+  return (TRUE);
 }
 
 int   test_player_in_north(t_data *data)
