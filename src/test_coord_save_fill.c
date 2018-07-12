@@ -21,7 +21,6 @@ int     test_coord(int x, int y, t_data *data)
   i = 0;
   j = 0;
   count = 0;
-  fprintf(stderr, "test_coord\n");
   while (i < data->lenpy)
   {
     while (j < data->lenpx)
@@ -41,8 +40,28 @@ int     test_coord(int x, int y, t_data *data)
 
 int     save_coord(int x, int y, t_data *data)
 {
-  fprintf(stderr, "save_coord\n");
   data->out_x = x;
   data->out_y = y;
   return (TRUE);
+}
+
+int   fill_random(t_data *data)
+{
+	int		i;
+	int		j;
+
+	i = -data->lenpy;
+	j = -data->lenpx;
+	while (i < data->lenmy + data->lenpy)
+	{
+		while (j < data->lenmx + data->lenpx)
+		{
+			if (test_coord(j, i, data))
+				return (save_coord(j, i, data));
+			j++;
+		}
+		i++;
+		j = -data->lenpx;
+	}
+	return (save_coord(0, 0, data));
 }

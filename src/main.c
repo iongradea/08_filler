@@ -12,13 +12,17 @@
 
 #include "../inc/filler.h"
 
+static int  set_boolean(t_data *data, int set_start_pos)
+{
+  data->start_bot_pos = data->first_p_x > data->lenmx / 2 ? TRUE : FALSE;
+  return (set_start_pos = TRUE);
+}
+
 int   main(void)
 {
   char    *line;
   t_data  data;
-  // TESTING
-  static int  boolean = FALSE;
-  // END TESTING
+  int  set_start_pos = FALSE;
 
   init_data(&data);
   while (get_next_line(0, &line) > 0)
@@ -26,26 +30,18 @@ int   main(void)
     if (ft_strncmp(line, "$$$", 3) == 0)
       save_player(&line, &data);
     else if (ft_strncmp(line, "Plateau", 7) == 0)
-    {
       save_map(&line, &data);
-      boolean = FALSE;
-    }
     else if (ft_strncmp(line, "Piece", 5) == 0)
     {
+      if (set_start_pos == FALSE)
+        set_start_pos = set_boolean(&data, set_start_pos);
       save_piece(&line, &data);
-      if (solve_dir_bot(&data) == TRUE)
-        ft_printf("%i %i\n", data.out_y, data.out_x);
-      // TESTING
-      boolean = TRUE;
+      if (data.start_bot_pos == TRUE)
+        solve_dir_bot(&data);
+      else
+        solve_dir_top(&data);
+      prt_res(&data);
     }
-    // TESTING
-    if (boolean == TRUE)
-    {
-      fprintf(stderr, "DATA\n");
-      prt_data(data);
-    }
-    // END TESTING
   }
-  write(2, "end\n", 4);
   return (0);
 }

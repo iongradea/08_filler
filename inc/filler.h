@@ -28,11 +28,21 @@
 # define IS_PLAYER data->map[i + y][j + x] == data->player
 # define IS_PLAYER_M data->map[i + y][j + x] == data->player + 32
 
+// extreme pieces
+# define FIRST_BOTRIGHTX data->first_p_x - data->p_botx
+# define FIRST_BOTRIGHTY data->first_p_y - data->p_boty
+# define LAST_TOPLEFTX data->last_p_x - data->p_topx
+# define LAST_TOPLEFTY data->last_p_y - data->p_topy
+
 // piece motion to direction
 # define BOT_LEFTX j - data->p_topx
 # define BOT_LEFTY i - data->p_boty
 # define BOT_RIGHTX j - data->p_botx
 # define BOT_RIGHTY i - data->p_boty
+# define TOP_LEFTX j - data->p_botx
+# define TOP_LEFTY i - data->p_topy
+# define TOP_RIGHTX j - data->p_topx
+# define TOP_RIGHTY i - data->p_topy
 
 #include "../libft/inc/libft.h"
 #include "../libft/inc/ft_printf.h"
@@ -57,6 +67,7 @@ typedef struct  s_data
   int   first_p_y;
   int   last_p_x;
   int   last_p_y;
+  int   start_bot_pos;
   int   out_x;
   int   out_y;
 }               t_data;
@@ -76,16 +87,28 @@ int   test_coord(int x, int y, t_data *data);
 int   save_coord(int x, int y, t_data *data);
 
 // MOTION
+int   fill_random(t_data *data);
+int   test_player_in_center(t_data *data);
 int   test_player_in_north(t_data *data);
+int   test_player_in_south(t_data *data);
+int   test_player_in_west(t_data *data);
+int   test_player_in_east(t_data *data);
+int   go_to_center(t_data *data);
 int   go_to_north(t_data *data);
+int   go_to_south(t_data *data);
+int   go_to_west(t_data *data);
+int   go_to_east(t_data *data);
 int   solve_dir_bot(t_data *data);
+int   solve_dir_top(t_data *data);
+void		prt_res(t_data *data);
+
+// ANNEX
+void	free_tab_str(char **str);
 
 // TEST & ANNEX
 void prt_vm(void);
 void prt_data(t_data data);
 void prt_data_map(t_data data);
 void prt_data_piece(t_data data);
-
-void	free_tab_str(char **str);
 
 #endif

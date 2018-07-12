@@ -14,8 +14,30 @@
 
 int   solve_dir_bot(t_data *data)
 {
-  fprintf(stderr, "solve_dir_bot\n");
+  if (test_player_in_center(data) == FALSE && go_to_center(data) == TRUE)
+    return (TRUE);
   if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
     return (TRUE);
-  return (TRUE);
+  if (test_player_in_west(data) == FALSE && go_to_west(data) == TRUE)
+    return (TRUE);
+  if (test_player_in_east(data) == FALSE && go_to_east(data) == TRUE)
+    return (TRUE);
+  if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
+    return (TRUE);
+  return (fill_random(data));
+}
+
+int   solve_dir_top(t_data *data)
+{
+  if (test_player_in_center(data) == FALSE && go_to_center(data) == TRUE)
+    return (TRUE);
+  if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
+    return (TRUE);
+  if (test_player_in_east(data) == FALSE && go_to_east(data) == TRUE)
+    return (TRUE);
+  if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
+    return (TRUE);
+  if (test_player_in_west(data) == FALSE && go_to_west(data) == TRUE)
+    return (TRUE);
+  return (fill_random(data));
 }

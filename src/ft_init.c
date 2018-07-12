@@ -25,4 +25,7 @@ void init_data(t_data *data) {
   data->first_p_y = UNDEFINED;
   data->last_p_x = UNDEFINED;
   data->last_p_y = UNDEFINED;
+  data->start_bot_pos = UNDEFINED;
+  data->out_x = UNDEFINED;
+  data->out_y = UNDEFINED;
 }

@@ -25,3 +25,28 @@ void	free_tab_str(char **str)
 	free(str);
 	str = NULL;
 }
+
+void		prt_res(t_data *data)
+{
+	int		i;
+
+	i = 0;
+	ft_printf("%i %i\n", data->out_y, data->out_x);
+	while (i < data->lenmy)
+	{
+		free(data->map[i]);
+		i++;
+	}
+	free(data->map);
+	data->map = NULL;
+	i = 0;
+	while (i < data->lenpy)
+	{
+		free(data->piece[i]);
+		i++;
+	}
+	free(data->piece);
+	data->piece = NULL;
+	data->out_x = UNDEFINED;
+	data->out_y = UNDEFINED;
+}
