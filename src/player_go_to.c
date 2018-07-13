@@ -70,3 +70,49 @@ int   go_to_south(t_data *data)
   }
   return (FALSE);
 }
+
+int   go_to_west_small(t_data *data)
+{
+  int i;
+  int j;
+
+  j = 0;
+  i = data->lenmy - 1;
+  while (j < data->lenmx - 1)
+  {
+    while (i >= 0)
+    {
+      if (test_coord(BOT_RIGHTX, BOT_RIGHTY, data))
+        return (save_coord(BOT_RIGHTX, BOT_RIGHTY, data));
+      else if (test_coord(TOP_RIGHTX, TOP_RIGHTY, data))
+        return (save_coord(TOP_RIGHTX, TOP_RIGHTY, data));
+      i--;
+    }
+    j++;
+    i = data->lenmy - 1;
+  }
+  return (FALSE);
+}
+
+int   go_to_east_small(t_data *data)
+{
+  int i;
+  int j;
+
+  j = data->lenmx - 1;
+  i = 0;
+  while (j >= 0)
+  {
+    while (i < data->lenmy - 1)
+    {
+      if (test_coord(BOT_LEFTX, BOT_LEFTY, data))
+        return (save_coord(BOT_LEFTX, BOT_LEFTY, data));
+      else if (test_coord(TOP_LEFTX, TOP_LEFTY, data))
+        return (save_coord(TOP_LEFTX, TOP_LEFTY, data));
+      i++;
+    }
+    j--;
+    i = 0;
+  }
+  return (FALSE);
+}

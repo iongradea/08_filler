@@ -47,9 +47,9 @@
 // alternate filling
 // cycle west is always true
 # define AREA data->lenmx * data->lenmy
-# define CYCLE_NORTH count % AREA < AREA / 4
-# define CYCLE_SOUTH count % AREA < AREA / 2
-# define CYCLE_EAST count % AREA < AREA * 3 / 4
+# define CYCLE_NORTH *count % AREA < AREA / 4
+# define CYCLE_SOUTH *count % AREA < AREA / 2
+# define CYCLE_EAST *count % AREA < AREA * 3 / 4
 
 #include "../libft/inc/libft.h"
 #include "../libft/inc/ft_printf.h"
@@ -99,6 +99,8 @@ int   solve_dir_top(t_data *data);
 int   test_player_in_center(t_data *data);
 int   test_player_in_north(t_data *data);
 int   test_player_in_south(t_data *data);
+int   test_player_in_west_small(t_data *data);
+int   test_player_in_east_small(t_data *data);
 int   test_player_in_west_bot(t_data *data);
 int   test_player_in_west_top(t_data *data);
 int   test_player_in_east_bot(t_data *data);
@@ -106,6 +108,8 @@ int   test_player_in_east_top(t_data *data);
 int   go_to_center(t_data *data);
 int   go_to_north(t_data *data);
 int   go_to_south(t_data *data);
+int   go_to_west_small(t_data *data);
+int   go_to_east_small(t_data *data);
 int   go_to_west_top(t_data *data);
 int   go_to_west_bot(t_data *data);
 int   go_to_east_top(t_data *data);

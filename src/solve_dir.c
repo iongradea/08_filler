@@ -12,6 +12,33 @@
 
 # include "../inc/filler.h"
 
+static int  fill_random(t_data *data, int *count)
+{
+  if (AREA < 400 && fill_north(data))
+    return (TRUE);
+  else if (CYCLE_NORTH && fill_north(data) == TRUE)
+  {
+    (*count)++;
+    return (TRUE);
+  }
+  else if (CYCLE_SOUTH && fill_south(data) == TRUE)
+  {
+    (*count)++;
+    return(TRUE);
+  }
+  else if (CYCLE_EAST && fill_east(data) == TRUE)
+  {
+    (*count)++;
+    return(TRUE);
+  }
+  else
+  {
+    (*count)++;
+    return(fill_west(data));
+  }
+  return (save_coord(0, 0, data));
+}
+
 int   solve_dir_bot(t_data *data)
 {
   static int  count = 0;
@@ -19,66 +46,26 @@ int   solve_dir_bot(t_data *data)
   if (test_player_in_center(data) == FALSE &&
   FIRST_BOTRIGHTX > data->lenmx / 2 && FIRST_BOTRIGHTY > data->lenmy / 2 &&
   go_to_center(data) == TRUE)
-  {
-    fprintf(stderr, "center\n");
     return (TRUE);
-  }
   if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
-  {
-    fprintf(stderr, "north\n");
     return (TRUE);
-  }
-  if (test_player_in_west_bot(data) == FALSE && go_to_west_bot(data) == TRUE)
-  {
-    fprintf(stderr, "west_bot\n");
+  if (AREA < 400 && test_player_in_west_small(data) && go_to_west_small(data))
     return (TRUE);
-  }
-  if (test_player_in_west_top(data) == FALSE && go_to_west_top(data) == TRUE)
-  {
-    fprintf(stderr, "west_top\n");
+  if (AREA >= 400 && test_player_in_west_bot(data) == FALSE &&
+    go_to_west_bot(data) == TRUE)
     return (TRUE);
-  }
-  if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
-  {
-    fprintf(stderr, "south\n");
+  if (AREA >= 400 && test_player_in_west_top(data) == FALSE &&
+    go_to_west_top(data) == TRUE)
     return (TRUE);
-  }
+  if (AREA < 400 && test_player_in_east_small(data) && go_to_east_small(data))
+    return (TRUE);
   if (test_player_in_east_top(data) == FALSE && go_to_east_top(data) == TRUE)
-  {
-    fprintf(stderr, "east_bot\n");
     return (TRUE);
-  }
   if (test_player_in_east_bot(data) == FALSE && go_to_east_bot(data) == TRUE)
-  {
-    fprintf(stderr, "east_top\n");
     return (TRUE);
-  }
-  if (CYCLE_NORTH && fill_north(data))
-  {
-    fprintf(stderr, "fill_north\n");
-    count++;
+  if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
     return (TRUE);
-  }
-  else if (CYCLE_SOUTH && fill_south(data) == TRUE)
-  {
-    fprintf(stderr, "fill_south\n");
-    count++;
-    return(TRUE);
-  }
-  else if (CYCLE_EAST && fill_east(data) == TRUE)
-  {
-    fprintf(stderr, "fill_east\n");
-    count++;
-    return(TRUE);
-  }
-  else
-  {
-    fprintf(stderr, "fill_west\n");
-    count++;
-    return(fill_west(data));
-  }
-  fprintf(stderr, "end\n");
-  return (save_coord(0, 0, data));
+  return (fill_random(data, &count));
 }
 
 int   solve_dir_top(t_data *data)
@@ -88,64 +75,24 @@ int   solve_dir_top(t_data *data)
   if (test_player_in_center(data) == FALSE &&
   LAST_TOPLEFTX < data->lenmx / 2 && LAST_TOPLEFTY < data->lenmy / 2 &&
   go_to_center(data) == TRUE)
-  {
-    fprintf(stderr, "center\n");
     return (TRUE);
-  }
+  if (AREA < 400 && test_player_in_east_small(data) && go_to_east_small(data))
+    return (TRUE);
+  if (AREA >= 400 && test_player_in_east_top(data) == FALSE &&
+    go_to_east_top(data) == TRUE)
+    return (TRUE);
+  if (AREA >= 400 && test_player_in_east_bot(data) == FALSE &&
+    go_to_east_bot(data) == TRUE)
+    return (TRUE);
   if (test_player_in_south(data) == FALSE && go_to_south(data) == TRUE)
-  {
-    fprintf(stderr, "south\n");
     return (TRUE);
-  }
-  if (test_player_in_east_top(data) == FALSE && go_to_east_top(data) == TRUE)
-  {
-    fprintf(stderr, "east\n");
+  if (AREA < 400 && test_player_in_west_small(data) &&go_to_west_small(data))
     return (TRUE);
-  }
-  if (test_player_in_east_bot(data) == FALSE && go_to_east_bot(data) == TRUE)
-  {
-    fprintf(stderr, "east\n");
-    return (TRUE);
-  }
-  if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
-  {
-    fprintf(stderr, "north\n");
-    return (TRUE);
-  }
   if (test_player_in_west_bot(data) == FALSE && go_to_west_bot(data) == TRUE)
-  {
-    fprintf(stderr, "west\n");
     return (TRUE);
-  }
   if (test_player_in_west_top(data) == FALSE && go_to_west_top(data) == TRUE)
-  {
-    fprintf(stderr, "west\n");
     return (TRUE);
-  }
-  if (CYCLE_NORTH && fill_north(data))
-  {
-    fprintf(stderr, "fill_north\n");
-    count++;
+  if (test_player_in_north(data) == FALSE && go_to_north(data) == TRUE)
     return (TRUE);
-  }
-  else if (CYCLE_SOUTH && fill_south(data) == TRUE)
-  {
-    fprintf(stderr, "fill_south\n");
-    count++;
-    return(TRUE);
-  }
-  else if (CYCLE_EAST && fill_east(data) == TRUE)
-  {
-    fprintf(stderr, "fill_east\n");
-    count++;
-    return(TRUE);
-  }
-  else
-  {
-    fprintf(stderr, "fill_west\n");
-    count++;
-    return(fill_west(data));
-  }
-  fprintf(stderr, "end\n");
-  return (save_coord(0, 0, data));
+  return (fill_random(data, &count));
 }
