@@ -44,24 +44,3 @@ int     save_coord(int x, int y, t_data *data)
   data->out_y = y;
   return (TRUE);
 }
-
-int   fill_random(t_data *data)
-{
-	int		i;
-	int		j;
-
-	i = -data->lenpy;
-	j = -data->lenpx;
-	while (i < data->lenmy + data->lenpy)
-	{
-		while (j < data->lenmx + data->lenpx)
-		{
-			if (test_coord(j, i, data))
-				return (save_coord(j, i, data));
-			j++;
-		}
-		i++;
-		j = -data->lenpx;
-	}
-	return (save_coord(0, 0, data));
-}

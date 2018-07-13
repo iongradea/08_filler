@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_dir.c                                         :+:      :+:    :+:   */
+/*   test_dir_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: igradea <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,38 +12,58 @@
 
 # include "../inc/filler.h"
 
-int   test_player_in_center(t_data *data)
+int   test_player_in_west_bot(t_data *data)
 {
-  if ((data->map)[data->lenmy / 2][data->lenmx / 2] == '.')
-    return (FALSE);
-  // fprintf(stderr, "lenmy / 2 : %i - lenmx / 2 : %i\n", data->lenmy / 2, data->lenmx / 2);
-  return (TRUE);
-}
+  int i;
 
-int   test_player_in_north(t_data *data)
-{
-  int j;
-
-  j = 0;
-  while (j < data->lenmx)
+  i = data->lenmy / 2;
+  while (i < data->lenmy)
   {
-    if (data->map[0][j] == data->player)
+    if (data->map[i][0] == data->player)
       return (TRUE);
-    j++;
+    i++;
   }
   return (FALSE);
 }
 
-int   test_player_in_south(t_data *data)
+int   test_player_in_west_top(t_data *data)
 {
-  int j;
+  int i;
 
-  j = 0;
-  while (j < data->lenmx)
+  i = 0;
+  while (i < data->lenmy / 2)
   {
-    if (data->map[data->lenmy - 1][j] == data->player)
+    if (data->map[i][0] == data->player)
       return (TRUE);
-    j++;
+    i++;
+  }
+  return (FALSE);
+}
+
+int   test_player_in_east_bot(t_data *data)
+{
+  int i;
+
+  i = data->lenmy / 2;
+  while (i < data->lenmy)
+  {
+    if (data->map[i][data->lenmx - 1] == data->player)
+      return (TRUE);
+    i++;
+  }
+  return (FALSE);
+}
+
+int   test_player_in_east_top(t_data *data)
+{
+  int i;
+
+  i = 0;
+  while (i < data->lenmy / 2)
+  {
+    if (data->map[i][data->lenmx - 1] == data->player)
+      return (TRUE);
+    i++;
   }
   return (FALSE);
 }

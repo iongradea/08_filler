@@ -17,8 +17,8 @@ CC = gcc
 
 # Source files
 SRC = main.c debug.c ft_save_player_map_piece.c ft_init.c annex.c \
-			ft_get_info_map_piece.c player_go_to.c solve_dir.c \
-			test_dir.c test_coord_save_fill.c
+			ft_get_info_map_piece.c player_go_to.c solve_dir.c test_dir.c \
+			test_coord_save.c player_go_to_2.c test_dir_2.c player_go_to_fill.c \
 
 SRCS = $(addprefix ./$(SRC_DIR)/, $(SRC))
 

@@ -44,6 +44,13 @@
 # define TOP_RIGHTX j - data->p_topx
 # define TOP_RIGHTY i - data->p_topy
 
+// alternate filling
+// cycle west is always true
+# define AREA data->lenmx * data->lenmy
+# define CYCLE_NORTH count % AREA < AREA / 4
+# define CYCLE_SOUTH count % AREA < AREA / 2
+# define CYCLE_EAST count % AREA < AREA * 3 / 4
+
 #include "../libft/inc/libft.h"
 #include "../libft/inc/ft_printf.h"
 #include "../libft/inc/get_next_line.h"
@@ -87,19 +94,26 @@ int   test_coord(int x, int y, t_data *data);
 int   save_coord(int x, int y, t_data *data);
 
 // MOTION
-int   fill_random(t_data *data);
+int   solve_dir_bot(t_data *data);
+int   solve_dir_top(t_data *data);
 int   test_player_in_center(t_data *data);
 int   test_player_in_north(t_data *data);
 int   test_player_in_south(t_data *data);
-int   test_player_in_west(t_data *data);
-int   test_player_in_east(t_data *data);
+int   test_player_in_west_bot(t_data *data);
+int   test_player_in_west_top(t_data *data);
+int   test_player_in_east_bot(t_data *data);
+int   test_player_in_east_top(t_data *data);
 int   go_to_center(t_data *data);
 int   go_to_north(t_data *data);
 int   go_to_south(t_data *data);
-int   go_to_west(t_data *data);
-int   go_to_east(t_data *data);
-int   solve_dir_bot(t_data *data);
-int   solve_dir_top(t_data *data);
+int   go_to_west_top(t_data *data);
+int   go_to_west_bot(t_data *data);
+int   go_to_east_top(t_data *data);
+int   go_to_east_bot(t_data *data);
+int   fill_north(t_data *data);
+int   fill_south(t_data *data);
+int   fill_east(t_data *data);
+int   fill_west(t_data *data);
 void		prt_res(t_data *data);
 
 // ANNEX
