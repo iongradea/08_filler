@@ -17,13 +17,34 @@ The game stops when one player made an error or no additionnal pieces can be put
 The VM then computes the scores of each players by adding the number of positions it has occupied ("X" or "O").<br/>
 
 Map at game start :
+
 ![Alt text](./img/map.png?raw=true "Title")
 
 Pieces example : 
-![Alt text](./img/piece.png?raw=true "Title")
+
+![Alt text](./img/pieces.png?raw=true "Title")
 
 ## Data structure
+Data structure : <br/>
 
+![Alt text](./img/data_structure.png?raw=true "Title")
+
+- player : idenfies the shape of 'our' player
+- opponent : shape of other player
+("X" or "O")
+- map : the map sent by the VM
+- piece : the piece sent by the VM
+- lenmx & lenmy : dimensions of the map
+- lenpx & lenpy : dimensions of the piece
+- p_topx & p_topy : position (in the piece) of the top left "*" of the piece 
+("*" is a fill & "." is an empty)
+- p_botx & p_boty : position of the bottom right "*" of the piece
+(p_top & p_bot are used to position the piece on the map taking into consideration its shape)
+- first_p_x & first_p_y : first piece of the player (starting from top left)
+- last_p_x & last_p_y : last piece of the player (starting from bottom right)
+(first_p & last_p are used to chose the strategy)
+- start_bot_pos : identify which of the position the player is at the start (top left or bottom right)
+- out_x & out_y : result (position where to put the piece)
 
 ## Program architecture
 The program is structured around the following components :<br/>
