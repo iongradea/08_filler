@@ -8,6 +8,8 @@ The goal is to design the most efficient player.
 
 ## Game explanation
 Every turn, the player receives the map status and one piece from the VM.
+![Alt text](../VM_map.jpg?raw=true "Title")
+
 The player then positions the piece on the map and the VM sends the same information to the next player.
 
 ## Strategy
