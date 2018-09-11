@@ -59,6 +59,13 @@ PLAYER STRATEGY :<br/>
 5- if the piece can't be positionned : return control to VM (end of game)<br/>
 
 File sructure : <br/>
+(Functions are globally grouped with the logic below) 
+- ft_save_player_map_piece.c : saves map, piece and player
+- ft_get_info_map_piece.c : get some data about map and piece
+- solve_dir.c : chose strategy
+- test_dir.c & test_dir_2.c : check the available directions for the strategy
+- player_go_to.c & ... : apply strategy in the chosen direction
+- test_save_coord.c : test if the piece can be positionned on the tested coordinates & saves these
 
 ![Alt text](./img/file_structure.png?raw=true "Title")
 
