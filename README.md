@@ -25,10 +25,6 @@ Pieces example :
 ![Alt text](./img/pieces.png?raw=true "Title")
 
 ## Data structure
-Data structure : <br/>
-
-![Alt text](./img/data_structure.png?raw=true "Title")
-
 - player : idenfies the shape of 'our' player
 - opponent : shape of other player
 ("X" or "O")
@@ -45,6 +41,10 @@ Data structure : <br/>
 (first_p & last_p are used to chose the strategy)
 - start_bot_pos : identify which of the position the player is at the start (top left or bottom right)
 - out_x & out_y : result (position where to put the piece)
+
+Data structure : <br/>
+
+![Alt text](./img/data_structure.png?raw=true "Title")
 
 ## Program architecture
 The program is structured around the following components :<br/>
