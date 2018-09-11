@@ -1,7 +1,7 @@
 # FILLER
 
 ## Goal
-Filler is an algorithmic game between 2 players managed by a VM.
+Filler is an algorithmic game between 2 players managed by a VM. <br />
 The player's goal is to fill the map with pieces of random shapes and sizes.
 The player that filled the most spaces on the map wins.
 The goal is to design the most efficient player.
