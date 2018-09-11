@@ -1,7 +1,8 @@
 # FILLER
 
 ## Launch 
-`make re`
+Example :<br/>
+`make re && ./filler_vm -f maps/map00 -p1 players/hcao.filler -p2 players/superjeannot.filler`
 
 
 ## Goal
