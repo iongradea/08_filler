@@ -11,8 +11,7 @@ Every turn, the player receives the map status and one piece from the VM.
 
 ![Alt text](./img/VM_map.png?raw=true "Title")
 
-The player then positions the piece on the map.
-The VM sends the update state of the map and the next to the second player for the next turn.
+The player then positions the piece on the map. The VM sends the update state of the map and the next to the second player for the next turn.
 
 ## Strategy
 The strategy used for the design of this player is to occupy the maximum space by reaching the borders of the map.
