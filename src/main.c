@@ -14,6 +14,7 @@
 
 static int  set_boolean(t_data *data, int set_start_pos)
 {
+  DEBUG ? ft_putstr_fd("launching set_boolean ...\n", 2) : DEBUG;
   data->start_bot_pos = data->first_p_x > data->lenmx / 2 ? TRUE : FALSE;
   return (set_start_pos = TRUE);
 }
@@ -24,6 +25,7 @@ int   main(void)
   t_data  data;
   static int  set_start_pos = FALSE;
 
+  DEBUG ? ft_putstr_fd("launching main ...\n", 2) : DEBUG;
   init_data(&data);
   while (get_next_line(0, &line) > 0)
   {

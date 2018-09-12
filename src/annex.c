@@ -16,6 +16,7 @@ void	free_tab_str(char **str)
 {
 	int		i;
 
+	DEBUG ? ft_putstr_fd("launching free_tab_str ...\n", 2) : DEBUG;
 	i = 0;
 	while (str[i])
 	{
@@ -30,6 +31,7 @@ void		prt_res(t_data *data)
 {
 	int		i;
 
+	DEBUG ? ft_putstr_fd("launching prt_res ...\n", 2) : DEBUG;
 	i = 0;
 	ft_printf("%i %i\n", data->out_y, data->out_x);
 	while (i < data->lenmy)

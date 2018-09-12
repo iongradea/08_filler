@@ -13,6 +13,7 @@
 #include "../inc/filler.h"
 
 void init_data(t_data *data) {
+  DEBUG ? ft_putstr_fd("launching init_data ...\n", 2) : DEBUG;
   data->lenmx = UNDEFINED;
   data->lenmy = UNDEFINED;
   data->lenpx = UNDEFINED;

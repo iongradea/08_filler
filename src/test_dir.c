@@ -14,6 +14,7 @@
 
 int   test_player_in_center(t_data *data)
 {
+  DEBUG ? ft_putstr_fd("launching test_player_in_center ...\n", 2) : DEBUG;
   if ((data->map)[data->lenmy / 2][data->lenmx / 2] == '.')
     return (FALSE);
   return (TRUE);
@@ -23,6 +24,7 @@ int   test_player_in_north(t_data *data)
 {
   int j;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_north ...\n", 2) : DEBUG;
   j = 0;
   while (j < data->lenmx)
   {
@@ -37,6 +39,7 @@ int   test_player_in_south(t_data *data)
 {
   int j;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_south ...\n", 2) : DEBUG;
   j = 0;
   while (j < data->lenmx)
   {
@@ -51,6 +54,7 @@ int   test_player_in_west_small(t_data *data)
 {
   int i;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_west_small ...\n", 2) : DEBUG;
   i = 0;
   while (i < data->lenmy)
   {
@@ -65,6 +69,7 @@ int   test_player_in_east_small(t_data *data)
 {
   int i;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_east_small ...\n", 2) : DEBUG;
   i = 0;
   while (i < data->lenmy - 1)
   {

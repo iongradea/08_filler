@@ -19,6 +19,7 @@ int   go_to_west_bot(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_west_bot ...\n", 2) : DEBUG;
   j = 0;
   i = data->lenmy - 1;
   while (j < data->lenmx)
@@ -42,6 +43,7 @@ int   go_to_west_top(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_west_top ...\n", 2) : DEBUG;
   j = 0;
   i = data->lenmy / 2;
   while (j < data->lenmx - 1)
@@ -65,6 +67,7 @@ int   go_to_east_bot(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_east_bot ...\n", 2) : DEBUG;
   j = data->lenmx - 1;
   i = data->lenmy / 2;
   while (j >= 0)
@@ -88,6 +91,7 @@ int   go_to_east_top(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_east_top ...\n", 2) : DEBUG;
   j = data->lenmx - 1;
   i = 0;
   while (j >= 0)

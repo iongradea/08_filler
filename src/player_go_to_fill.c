@@ -17,6 +17,7 @@ int   fill_north(t_data *data)
 	int		i;
 	int		j;
 
+	DEBUG ? ft_putstr_fd("launching fill_north ...\n", 2) : DEBUG;
 	i = -data->lenpy;
 	j = -data->lenpx;
 	while (i < data->lenmy + data->lenpy)
@@ -38,6 +39,7 @@ int   fill_south(t_data *data)
 	int		i;
 	int		j;
 
+	DEBUG ? ft_putstr_fd("launching fill_south ...\n", 2) : DEBUG;
 	i = data->lenmy + data->lenpy - 1;
 	j = data->lenmy + data->lenpx - 1;
 	while (i >= 0)
@@ -59,6 +61,7 @@ int   fill_west(t_data *data)
   int   i;
   int   j;
 
+	DEBUG ? ft_putstr_fd("launching fill_west ...\n", 2) : DEBUG;
   i = data->lenmy + data->lenpy - 1;
   j = -data->lenpx;
   while (j < data->lenmy + data->lenpy)
@@ -80,6 +83,7 @@ int   fill_east(t_data *data)
   int   i;
   int   j;
 
+	DEBUG ? ft_putstr_fd("launching fill_east ...\n", 2) : DEBUG;
   i = -data->lenpy;
   j = data->lenmx + data->lenpx - 1;
   while (j >= 0)

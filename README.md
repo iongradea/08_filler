@@ -2,7 +2,8 @@
 
 ## Launch 
 Example :<br/>
-`make re && ./filler_vm -f maps/map00 -p1 players/hcao.filler -p2 players/superjeannot.filler`
+`make re`
+`./ressources/filler_vm -f ressources/maps/map00 -p1 ./igradea.filler -p2 ressources/players/superjeannot.filler`
 
 
 ## Goal

@@ -13,6 +13,7 @@
 #include "../inc/filler.h"
 
 void prt_data(t_data data) {
+  DEBUG ? ft_putstr_fd("launching prt_data ...\n", 2) : DEBUG;
   fprintf(stderr, "player : %c\n", data.player);
   fprintf(stderr, "opponent : %c\n", data.opponent);
   fprintf(stderr, "lenmx : %i\n", data.lenmx);
@@ -33,6 +34,7 @@ void prt_data_map(t_data data) {
   int   i;
 
   i = 0;
+  DEBUG ? ft_putstr_fd("launching prt_data_map ...\n", 2) : DEBUG;
   while (i < data.lenmy)
   {
     fprintf(stderr, "%s\n", data.map[i]);
@@ -43,6 +45,7 @@ void prt_data_map(t_data data) {
 void prt_data_piece(t_data data) {
   int   i;
 
+  DEBUG ? ft_putstr_fd("launching prt_data_piece ...\n", 2) : DEBUG;
   i = 0;
   while (i < data.lenpy)
   {
@@ -52,9 +55,11 @@ void prt_data_piece(t_data data) {
 }
 
 // works for map00
-void prt_vm(void) {
+void prt_vm(void)
+{
   char  *line;
 
+  DEBUG ? ft_putstr_fd("launching prt_vm ...\n", 2) : DEBUG;
   while (get_next_line(0, &line) > 0)
   {
     fprintf(stderr, "%s\n", line);

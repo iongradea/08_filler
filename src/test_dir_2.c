@@ -16,6 +16,7 @@ int   test_player_in_west_bot(t_data *data)
 {
   int i;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_west_bot ...\n", 2) : DEBUG;
   i = data->lenmy / 2;
   while (i < data->lenmy)
   {
@@ -30,6 +31,7 @@ int   test_player_in_west_top(t_data *data)
 {
   int i;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_west_top ...\n", 2) : DEBUG;
   i = 0;
   while (i < data->lenmy / 2)
   {
@@ -44,6 +46,7 @@ int   test_player_in_east_bot(t_data *data)
 {
   int i;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_east_bot ...\n", 2) : DEBUG;
   i = data->lenmy / 2;
   while (i < data->lenmy)
   {
@@ -58,6 +61,7 @@ int   test_player_in_east_top(t_data *data)
 {
   int i;
 
+  DEBUG ? ft_putstr_fd("launching test_player_in_east_top ...\n", 2) : DEBUG;
   i = 0;
   while (i < data->lenmy / 2)
   {

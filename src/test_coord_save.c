@@ -18,6 +18,7 @@ int     test_coord(int x, int y, t_data *data)
   int   j;
   int   count;
 
+  DEBUG ? ft_putstr_fd("launching test_coord ...\n", 2) : DEBUG;
   i = 0;
   j = 0;
   count = 0;
@@ -40,6 +41,7 @@ int     test_coord(int x, int y, t_data *data)
 
 int     save_coord(int x, int y, t_data *data)
 {
+  DEBUG ? ft_putstr_fd("launching save_coord ...\n", 2) : DEBUG;
   data->out_x = x;
   data->out_y = y;
   return (TRUE);

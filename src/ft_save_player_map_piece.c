@@ -14,8 +14,12 @@
 
 void save_player(char **line, t_data *data)
 {
+  DEBUG ? ft_putstr_fd("launching save_player ...\n", 2) : DEBUG;
   data->player = (*line)[10] == '1' ? PLAYER1 : PLAYER2;
   data->opponent = data->player == PLAYER1 ? PLAYER2 : PLAYER1;
+  DEBUG ? ft_putstr_fd("data->player : ", 2) : DEBUG;
+  DEBUG ? ft_putchar_fd(data->player, 2) : DEBUG;
+  DEBUG ? ft_putchar_fd('\n', 2) : DEBUG;
 }
 
 void save_map(char **line, t_data *data)
@@ -24,6 +28,7 @@ void save_map(char **line, t_data *data)
   int   i;
 
   i = 0;
+  DEBUG ? ft_putstr_fd("launching save_map ...\n", 2) : DEBUG;
   str_tab = ft_strsplit(*line);
   data->lenmy = ft_atoi(str_tab[1]);
   data->lenmx = ft_atoi(str_tab[2]);
@@ -50,6 +55,7 @@ void save_piece(char **line, t_data *data)
   int   i;
 
   i = 0;
+  DEBUG ? ft_putstr_fd("launching save_piece ...\n", 2) : DEBUG;
   str_tab = ft_strsplit(*line);
   data->lenpy = ft_atoi(str_tab[1]);
   data->lenpx = ft_atoi(str_tab[2]);

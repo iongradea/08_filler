@@ -14,6 +14,7 @@
 
 static int  fill_random(t_data *data, int *count)
 {
+  DEBUG ? ft_putstr_fd("launching fill_random ...\n", 2) : DEBUG;
   if (AREA < 400 && fill_north(data))
     return (TRUE);
   else if (CYCLE_NORTH && fill_north(data) == TRUE)
@@ -43,6 +44,7 @@ int   solve_dir_bot(t_data *data)
 {
   static int  count = 0;
 
+  DEBUG ? ft_putstr_fd("launching solve_dir_bot ...\n", 2) : DEBUG;
   if (test_player_in_center(data) == FALSE &&
   FIRST_BOTRIGHTX > data->lenmx / 2 && FIRST_BOTRIGHTY > data->lenmy / 2 &&
   go_to_center(data) == TRUE)
@@ -72,6 +74,7 @@ int   solve_dir_top(t_data *data)
 {
   static int  count = 0;
 
+  DEBUG ? ft_putstr_fd("launching solve_dir_top ...\n", 2) : DEBUG;
   if (test_player_in_center(data) == FALSE &&
   LAST_TOPLEFTX < data->lenmx / 2 && LAST_TOPLEFTY < data->lenmy / 2 &&
   go_to_center(data) == TRUE)

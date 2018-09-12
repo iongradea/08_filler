@@ -17,6 +17,7 @@ void get_top_piece(t_data *data)
   int   i;
   int   j;
 
+  DEBUG ? ft_putstr_fd("launching get_top_piece ...\n", 2) : DEBUG;
   i = 0;
   j = 0;
   while (i < data->lenpy)
@@ -41,6 +42,7 @@ void get_bot_piece(t_data *data)
   int   i;
   int   j;
 
+  DEBUG ? ft_putstr_fd("launching get_bot_piece ...\n", 2) : DEBUG;
   i = data->lenpy - 1;
   j = data->lenpx - 1;
   while (i >= 0)
@@ -65,6 +67,7 @@ void get_first_piece(t_data *data)
   int   i;
   int   j;
 
+  DEBUG ? ft_putstr_fd("launching get_first_piece ...\n", 2) : DEBUG;
   i = 0;
   j = 0;
   while (i < data->lenmy)
@@ -90,6 +93,7 @@ void get_last_piece(t_data *data)
   int   i;
   int   j;
 
+  DEBUG ? ft_putstr_fd("launching get_last_piece ...\n", 2) : DEBUG;
   i = data->lenmy - 1;
   j = data->lenmx - 1;
   while (i >= 0)

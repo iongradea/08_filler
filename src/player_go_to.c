@@ -14,6 +14,7 @@
 
 int   go_to_center(t_data *data)
 {
+  DEBUG ? ft_putstr_fd("launching go_to_center ...\n", 2) : DEBUG;
   if (data->start_bot_pos == TRUE &&
     test_coord(FIRST_BOTRIGHTX, FIRST_BOTRIGHTY, data) == TRUE)
     return (save_coord(FIRST_BOTRIGHTX, FIRST_BOTRIGHTY, data));
@@ -30,6 +31,7 @@ int   go_to_north(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_north ...\n", 2) : DEBUG;
   i = 0;
   j = 0;
   while (i < data->lenmy)
@@ -53,6 +55,7 @@ int   go_to_south(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_south ...\n", 2) : DEBUG;
   j = data->lenmx - 1;
   i = data->lenmy - 1;
   while (i > 0)
@@ -76,6 +79,7 @@ int   go_to_west_small(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_west_small ...\n", 2) : DEBUG;
   j = 0;
   i = data->lenmy - 1;
   while (j < data->lenmx - 1)
@@ -99,6 +103,7 @@ int   go_to_east_small(t_data *data)
   int i;
   int j;
 
+  DEBUG ? ft_putstr_fd("launching go_to_east_small ...\n", 2) : DEBUG;
   j = data->lenmx - 1;
   i = 0;
   while (j >= 0)

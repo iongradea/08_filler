@@ -19,6 +19,7 @@
 # define FALSE 0
 # define ERROR -1
 # define UNDEFINED -2
+# define DEBUG 0
 
 // test_coord
 # define IS_OUTSIDE_Y i + y >= data->lenmy || i + y < 0
