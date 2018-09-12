@@ -1,7 +1,6 @@
 # FILLER
 
 ## Launch 
-Example :<br/>
 `make re`<br/>
 `./ressources/filler_vm -f ressources/maps/map00 -p1 ./igradea.filler -p2 ressources/players/superjeannot.filler`
 
