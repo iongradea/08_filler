@@ -2,7 +2,7 @@
 
 ## Launch 
 Example :<br/>
-`make re`
+`make re`<br/>
 `./ressources/filler_vm -f ressources/maps/map00 -p1 ./igradea.filler -p2 ressources/players/superjeannot.filler`
 
 
@@ -51,6 +51,8 @@ Pieces example :
 Data structure : <br/>
 
 ![Alt text](./img/data_structure.png?raw=true "Title")
+
+To debug, there is a macro DEBUG in the include file in ./inc. Set DEBUG to 1 and look at the program workflow and logs in stderr.
 
 ## Program architecture
 The program is structured around the following components :<br/>
